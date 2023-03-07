@@ -13,9 +13,13 @@ const alchemy = new Alchemy(config);
  * @account: owner's address
  * Returns: nfts fetched
  */
-const main = async ({ account }) => {
-  const nfts = await alchemy.nft.getNftsForOwner(account);
-  return nfts;
+const main = async ({ contractAddress }) => {
+  if (contractAddress) {
+    const nfts = await alchemy.nft.getNftsForContract(contractAddress);
+    return nfts;
+  } else {
+    return;
+  }
 };
 
 export { main };

@@ -1,18 +1,13 @@
 import React from "react";
-import { useMoralis } from "react-moralis";
-import { main } from "../utils/alchemy";
-import { useAsync } from "../utils/hooks/use-async";
+import NFTCard from "./nft-card";
 
-export default function NFTS() {
-  const { isWeb3Enabled, account } = useMoralis();
-  const { run, data: nfts, error, isError, isLoading, isSuccess } = useAsync();
-
-  React.useEffect(() => {
-    run(main({ account }));
-  }, [account, run]);
-
-  if (isError) {
-    return <h1>{error.message}</h1>;
-  }
-  return <div>nfts</div>;
+export default function NFTS({ nfts }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-4 justify-center max-w-6xl mx-auto">
+      {nfts.map((nft, index) => (
+        <NFTCard key={`${index} ${nft.tokenUri}`} nft={nft} />
+      ))}
+      {JSON.stringify(nfts)}
+    </div>
+  );
 }
