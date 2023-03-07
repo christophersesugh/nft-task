@@ -1,7 +1,7 @@
 import React from "react";
 import { BsInfoCircle } from "react-icons/bs";
 import { useMoralis } from "react-moralis";
-import { main } from "../utils/alchemy";
+import { getNfts } from "../utils/alchemy";
 import { useAsync } from "../utils/hooks/use-async";
 import NFTForm from "./nft-form";
 import NFTS from "./nfts";
@@ -14,7 +14,7 @@ export default function Discover() {
   const { run, data, error, isError, isLoading, isSuccess, reset } = useAsync();
 
   React.useEffect(() => {
-    run(main({ contractAddress: query }));
+    run(getNfts({ contractAddress: query }));
   }, [isError, query, reset, run]);
 
   return (
@@ -28,12 +28,13 @@ export default function Discover() {
             setQuery={setQuery}
             setQueried={setQueried}
             reset={reset}
+            query={query}
           />
           {!queried || !query || isLoading ? (
             <div className="max-w-2xl grid place-items-center text-4xl text-slate-500 md:py-[5rem] mx-auto">
               <BsInfoCircle className="text-[4rem] mb-4" />
               <h1 className="text-center">
-                Enter an NFT contract address to get started
+                Enter an NFT contract address to continue.
               </h1>
             </div>
           ) : null}

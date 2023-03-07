@@ -7,6 +7,7 @@ export default function NFTForm({
   isLoading,
   error,
   reset,
+  query,
 }) {
   function handleFormSubmit(event) {
     event.preventDefault();
