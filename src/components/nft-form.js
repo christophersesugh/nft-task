@@ -7,7 +7,6 @@ export default function NFTForm({
   isLoading,
   error,
   reset,
-  query,
 }) {
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -21,7 +20,7 @@ export default function NFTForm({
   return (
     <form
       onSubmit={handleFormSubmit}
-      className="mx-auto flex flex-col gap-6 max-w-2xl border-2 rounded-lg py-8 my-12 border-blue-400 px-12"
+      className="mx-auto flex flex-col gap-6 max-w-2xl border-2 rounded-lg py-8 my-4 border-blue-400 px-12"
     >
       <p className="font-bold text-xl mx-auto">
         Enter NFT contract address below to get a list of NFTs.

@@ -7,7 +7,6 @@ export default function NFTS({ nfts }) {
       {nfts.map((nft, index) => (
         <NFTCard key={`${index} ${nft.tokenUri}`} nft={nft} />
       ))}
-      {JSON.stringify(nfts)}
     </div>
   );
 }

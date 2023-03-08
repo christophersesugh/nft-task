@@ -4,7 +4,7 @@ import retry from "async-retry";
 const apiKey = process.env.REACT_APP_ALCHEMY_API_KEY;
 
 const config = {
-  apiKey: apiKey,
+  apiKey,
   network: Network.ETH_GOERLI,
 };
 
