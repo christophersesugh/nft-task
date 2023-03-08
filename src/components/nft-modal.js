@@ -6,7 +6,7 @@ const openseaTestnetURL = "https://testnets.opensea.io/assets";
 
 export default function NFTModal({ showModal, setShowModal, nft }) {
   return showModal ? (
-    <div className="fixed top-0 left-0 w-full bg-blue-100/90 z-50 grid items-start justify-center h-full">
+    <div className="fixed top-0 left-0 w-full bg-blue-100/90 z-50 grid items-start justify-center h-full pt-4">
       <div className="m-4 lg:m-0 border-2 border-blue-400 bg-blue-200 rounded-md max-w-4xl mt-12 divide-y-2 divide-blue-400 overflow-y-auto ">
         <div className="p-2 text-xl flex justify-between">
           <span>Details</span>
