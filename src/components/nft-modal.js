@@ -21,7 +21,7 @@ export default function NFTModal({ showModal, setShowModal, nft }) {
           <img
             src={nft.rawMetadata.image}
             alt={nft.rawMetadata.name}
-            className="w-full md:w-[40%] rounded-lg"
+            className="w-full md:w-[40%] rounded-lg hidden md:block"
           />
           <div className="p-2 flex flex-col items-start md:pl-6">
             <h1 className="text-lg text-center underline">NFT</h1>

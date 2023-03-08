@@ -23,7 +23,7 @@ export default function NFTCard({ nft }) {
         <p className="text-slate-500 text-medium text-center">
           #{nft.contract.tokenType}
         </p>
-        <div className="">
+        <div>
           <p className="p-2 bg-blue-50 my-4 rounded-xl">
             <span className="text-slate-500 text-small">Contract addr.: </span>
             {truncateAddress(nft.contract.address, 10)}
