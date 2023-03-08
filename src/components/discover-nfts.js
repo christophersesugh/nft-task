@@ -12,7 +12,7 @@ export default function Discover() {
 
   React.useEffect(() => {
     run(getNfts({ contractAddress: query }));
-  }, [isError, query, reset, run]);
+  }, [query, run]);
 
   return (
     <main className="p-4">
