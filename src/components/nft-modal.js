@@ -7,7 +7,7 @@ const openseaTestnetURL = "https://testnets.opensea.io/assets";
 export default function NFTModal({ showModal, setShowModal, nft }) {
   return showModal ? (
     <div className="fixed top-0 left-0 w-full bg-blue-100/90 z-50 grid items-start justify-center h-full">
-      <div className="md:flex-row border-2 border-blue-400 bg-blue-200 rounded-md max-w-4xl mt-12 divide-y-2 divide-blue-400">
+      <div className="m-4 lg:m-0 border-2 border-blue-400 bg-blue-200 rounded-md max-w-4xl mt-12 divide-y-2 divide-blue-400 overflow-y-auto ">
         <div className="p-2 text-xl flex justify-between">
           <span>Details</span>
           <button
@@ -17,13 +17,13 @@ export default function NFTModal({ showModal, setShowModal, nft }) {
             &times;
           </button>
         </div>
-        <div className="flex h-auto">
+        <div className="flex h-auto flex-col md:flex-row">
           <img
             src={nft.rawMetadata.image}
             alt={nft.rawMetadata.name}
-            className="w-[40%] rounded-lg"
+            className="w-full md:w-[40%] rounded-lg"
           />
-          <div className="p-2 flex flex-col items-start pl-6">
+          <div className="p-2 flex flex-col items-start md:pl-6">
             <h1 className="text-lg text-center underline">NFT</h1>
             <p className="text-center font-bold text-lg overflow-auto mt-4">
               Name: {nft.rawMetadata.name}
